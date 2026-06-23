@@ -371,6 +371,7 @@ export interface InsightsData {
     income_trend: Array<{ month: string; amount: string }>;
     expense_trend: Array<{ month: string; amount: string }>;
     savings_trend: Array<{ month: string; contributed: string }>;
+    category_trends?: Record<string, Array<{ month: string; amount: string }>>;
   };
   alerts: any[];
   recommendations: any[];

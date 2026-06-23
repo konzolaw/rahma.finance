@@ -13,7 +13,7 @@ import {
   TrendingUp, Activity, PieChart, ShieldCheck, Zap,
   AlertTriangle, ChevronRight, Calendar, Brain,
   CheckCircle2, Clock, ArrowLeft, ArrowRight, BarChart2, Layers,
-  Globe, Coins, DollarSign, Calculator, Send, Sparkles, AlertCircle
+  Globe, Coins, Calculator, Send, Sparkles, AlertCircle
 } from 'lucide-react';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -608,7 +608,7 @@ export default function InsightsPage() {
 
                 {marketData ? (
                   <div className="space-y-6">
-                    {/* Money Market Funds */}
+                    {/* Section 1: Money Market Funds */}
                     <div>
                       <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-3 ml-1">
                         Money Market Funds (MMFs)
@@ -655,7 +655,7 @@ export default function InsightsPage() {
                       </div>
                     </div>
 
-                    {/* Dividend Stocks */}
+                    {/* Section 2: Dividend Stocks */}
                     <div>
                       <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-3 ml-1">
                         High-Yield Dividend Options

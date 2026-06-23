@@ -89,7 +89,8 @@ export default function CategoryTrendsGrid({ data }: CategoryTrendsGridProps) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
       {sorted.map(([name, points], idx) => {
-        const color = CARD_COLORS[idx % CARD_COLORS.length];
+        const defaultColor = { bg: 'bg-teal-500/10', border: 'border-teal-500/20', bar: '#14B8A6', text: 'text-teal-400' };
+        const color = CARD_COLORS[idx % CARD_COLORS.length] || defaultColor;
         const amounts = points.map(p => parseFloat(p.amount));
         const total   = amounts.reduce((s, v) => s + v, 0);
         const latest  = amounts[amounts.length - 1] ?? 0;

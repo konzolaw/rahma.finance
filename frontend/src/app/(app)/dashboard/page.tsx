@@ -438,9 +438,10 @@ export default function DashboardPage() {
       {/* Spending Breakdown Section */}
       {chartData.length > 0 && (() => {
         const totalSpent = chartData.reduce((s, d) => s + parseFloat(d.amount.toString()), 0);
-        const totalBudget = parseFloat(dashboardResponse.data.budgets?.total?.monthly_budget || '0');
+        const totalBudget = parseFloat(dashboardResponse.data.budgets?.total?.budget || '0');
         const utilPct = totalBudget > 0 ? Math.round((totalSpent / totalBudget) * 100) : null;
         return (
+
           <section className="glass-card rounded-[2rem] p-6 border border-white/5 relative overflow-hidden">
             <div className="absolute -right-16 -top-16 w-48 h-48 bg-violet-500/5 blur-[80px] rounded-full pointer-events-none" />
 

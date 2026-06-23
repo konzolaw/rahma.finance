@@ -9,12 +9,10 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer, 
-  Cell,
-  ReferenceLine,
   Legend
 } from 'recharts';
 import { formatKsh } from '@/lib/formatters';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface DailyData {
   day: number;
@@ -66,7 +64,7 @@ export default function DailySpendingChart({ data, comparisonData, period }: Dai
       const dayIndex = (idx + 1) % 7;
       const entry: any = { name: dayName };
       const matches = data.filter(d => new Date(d.date).getDay() === dayIndex);
-      matches.forEach((m, mIdx) => {
+      matches.forEach((m) => {
         const weekNum = Math.ceil(new Date(m.date).getDate() / 7);
         entry[`Week ${weekNum}`] = parseFloat(m.amount.toString());
         entry[`date${weekNum}`] = m.date;
@@ -145,7 +143,7 @@ export default function DailySpendingChart({ data, comparisonData, period }: Dai
           <YAxis hide />
           
           <Tooltip 
-            cursor={{ fill: 'rgba(255,255,255,0.02)', radius: [12, 12, 0, 0] }}
+            cursor={{ fill: 'rgba(255,255,255,0.02)' }}
             content={({ active, payload, label }) => {
               if (active && payload && payload.length) {
                 return (
