@@ -4,6 +4,7 @@
     "lib": ["ES2020", "dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
+    "types": ["node", "react", "react-dom", "js-cookie"],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
