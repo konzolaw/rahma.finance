@@ -46,7 +46,17 @@ api_urlpatterns = [
     path('', include(router.urls)),
 ]
 
+from django.http import JsonResponse
+
+def api_root(request):
+    return JsonResponse({
+        "status": "healthy",
+        "message": "Welcome to Rahma Finance API",
+        "version": "v1"
+    })
+
 urlpatterns = [
+    path('', api_root, name='api-root'),
     path('admin/', admin.site.urls),
     path('api/v1/', include(api_urlpatterns)),
 ]
