@@ -23,10 +23,19 @@ const nextConfig = {
     // 4. Append the path wildcard parameter for Next.js proxying
     apiDestination = apiDestination + '/:path*';
 
+    // 5. Clean base destination for split rewrites
+    const cleanDestination = apiDestination.replace(/\/?:path\*$/, '');
+
     return [
+      // Rule 1: Explicitly preserve trailing slash when present
+      {
+        source: '/api/v1/:path*/',
+        destination: `${cleanDestination}/:path*/`,
+      },
+      // Rule 2: Fallback for non-trailing-slashed requests
       {
         source: '/api/v1/:path*',
-        destination: apiDestination,
+        destination: `${cleanDestination}/:path*`,
       },
     ];
   },
