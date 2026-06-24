@@ -15,7 +15,7 @@ export default function TransactionsPage() {
   const [exportType, setExportType] = useState<'expenses' | 'income'>('expenses');
 
   const handleDownloadCSV = () => {
-    const baseUrl = process.env['NEXT_PUBLIC_API_URL'] || 'http://localhost:8000/api/v1';
+    const baseUrl = '/api/v1';
     const endpoint = exportType === 'expenses' ? '/expenses/export_csv/' : '/income/export_csv/';
     window.location.href = `${baseUrl}${endpoint}`;
   };

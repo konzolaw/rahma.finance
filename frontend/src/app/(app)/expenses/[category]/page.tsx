@@ -121,7 +121,7 @@ export default function ExpenseCategoryPage({ params }: { params: Promise<{ cate
             </div>
             <button 
               onClick={() => {
-                const baseUrl = process.env['NEXT_PUBLIC_API_URL'] || 'http://localhost:8000/api/v1';
+                const baseUrl = '/api/v1';
                 window.location.href = `${baseUrl}/expenses/export_csv/?category=${categoryCode}`;
               }}
               className="w-12 h-12 flex items-center justify-center bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 active:scale-95 transition-all"
